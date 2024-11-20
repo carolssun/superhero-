@@ -12,7 +12,9 @@
 
   <div id='objetivo'/> 
    
-  ## Objetivo  
+## Objetivo
+
+O objetivo desta atividade é demonstrar a transição de uma aplicação simples de exibição de heróis utilizando `HTML`, `CSS` e `JavaScript` para uma estrutura mais robusta e escalável usando Next.js e React. A proposta visa ilustrar como a aplicação pode ser modularizada, tornando o código mais limpo, reutilizável e fácil de manter, aproveitando os benefícios dos hooks do React, como `useState` e `useEffect`, e da gestão eficiente de estado. Além disso, a prova de conceito explora como a integração com APIs externas pode ser feita de maneira mais eficaz e segura com o uso de `fetch` e CSS Modules para encapsulamento de estilos, promovendo melhores práticas de desenvolvimento web.
 
 
 <div id='htmlXnext' />
