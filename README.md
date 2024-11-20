@@ -105,6 +105,7 @@ const getHero = (id) => {
 
 * O que está fazendo: O fetch é utilizado para fazer a requisição à API. Ele retorna uma Promise, que permite lidar de forma mais limpa com a resposta usando then e catch para tratar erros.
 * Por que mudou: fetch é mais moderno, mais fácil de usar, e integrado ao ciclo de vida do React, o que torna o código mais legível e modular.
+* Além disso, o spread operator `(...prevHeroes)` é usado para criar uma nova cópia do array de heróis, adicionando o novo herói ao final. Isso é necessário no React para garantir a imutabilidade do estado. 
 
 <div id='3' />
 
@@ -156,7 +157,7 @@ return (
 );
 ```
 
-* O que está fazendo: Em vez de manipular o DOM diretamente, o React usa o estado (heroes) para armazenar os dados dos heróis e automaticamente re-renderiza a página sempre que o estado é atualizado.
+* O que está fazendo: Em vez de manipular o DOM diretamente, o React usa o estado (heroes) para armazenar os dados dos heróis e automaticamente re-renderiza a página sempre que o estado é atualizado. 
 * Por que mudou: O React gerencia a renderização de maneira eficiente e baseada em estado, o que permite que o código seja mais modular e fácil de manter, sem a necessidade de atualizar manualmente o DOM.
 
 
@@ -230,7 +231,7 @@ No código Next.js, o HTML foi transformado em um componente React reutilizável
 ))}
 ```
 
-* O que está fazendo: O código agora utiliza componentes React e mapeia o array de heróis para renderizar dinamicamente os cartões de heróis.
+* O que está fazendo: O código agora utiliza componentes React e mapeia o array de heróis para renderizar dinamicamente os cartões de heróis. Esse trecho de código itera sobre a lista de heróis (heroes) e renderiza um card para cada um, exibindo a imagem, o nome e as estatísticas de inteligência e força. Cada card é composto por uma imagem (<img>), onde a fonte é definida pela URL armazenada em hero.image, e o nome é exibido em um título (<h1>). As estatísticas de inteligência e força são apresentadas como barras de progresso, cujo tamanho é dinamicamente ajustado com base nos valores de hero.intelligence e hero.strength. A estilização é feita utilizando classes do arquivo de CSS Modules, e a largura das barras de progresso é definida inline, conforme os dados dos heróis.
 * Por que mudou: A componentização permite reutilização e maior modularidade, o que facilita a manutenção e expansão da aplicação.
 
 <div id='imagens' />
