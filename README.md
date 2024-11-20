@@ -7,6 +7,7 @@
 *  [3. Atualização do DOM: Manipulação Direta vs React State](#3)
 *  [4. Estilos CSS:](#4)
 *  [5. Renderização e Componentização:](#5)
+*  [6. Imagens](#imagens)
 * [Autoras](#autoras)
 
   <div id='objetivo'/> 
@@ -229,6 +230,19 @@ No código Next.js, o HTML foi transformado em um componente React reutilizável
 
 * O que está fazendo: O código agora utiliza componentes React e mapeia o array de heróis para renderizar dinamicamente os cartões de heróis.
 * Por que mudou: A componentização permite reutilização e maior modularidade, o que facilita a manutenção e expansão da aplicação.
+
+<div id='imagens' />
+  
+## Imagens
+
+### IMAGEM original:
+![image](https://github.com/user-attachments/assets/fde21340-c571-4695-84af-64f445b8118c)
+
+
+
+### IMAGEM NEXT.JS: 
+
+![image](https://github.com/user-attachments/assets/b5d0f313-a21b-472b-aed2-c22da9de90b1)
 
 
 
