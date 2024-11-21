@@ -33,7 +33,10 @@ O código original é baseado em HTML estático, que exibe informações diretam
 ```
 
 * O que estava fazendo: O HTML basicamente configurava a estrutura da página, e a interação com a API de super-heróis acontecia via JavaScript diretamente no <script>.
-* Problema: Embora simples, o código não reutiliza componentes e depende de funções globais, o que pode ser ineficiente e difícil de manter.
+### Problemas encontrados:
+* Falta de modularidade: Todo o código estava centralizado, sem separação clara entre lógica e interface. Isso torna o crescimento do projeto complexo.
+* Repetição de código: Era difícil reutilizar partes do HTML ou lógica em outros contextos.
+* Manutenção difícil: Alterar uma funcionalidade demandava mudanças em vários lugares, aumentando o risco de erros.
 
 
 Em `Next.js`, a estrutura do projeto é dividida em componentes e arquivos de estilo. O código está agora em um componente funcional dentro do diretório pages:
@@ -49,8 +52,12 @@ export default function Home() {
 }
 ```
 
-* O que está fazendo: Agora, temos um componente React que é mais modular. O useState gerencia o estado dos heróis, e useEffect permite buscar os dados assim que o componente for carregado.
-* Por que mudou: Em vez de manipular o DOM diretamente, agora usamos um estado reativo para refletir as mudanças automaticamente, o que facilita a manutenção e a escalabilidade.
+* O que faz: Agora, temos um componente React que é mais modular. O useState gerencia o estado dos heróis, e useEffect permite buscar os dados assim que o componente for carregado.
+### Por que melhorou:
+* Em vez de manipular o DOM diretamente, agora usamos um estado reativo para refletir as mudanças automaticamente, o que facilita a manutenção e a escalabilidade.
+* Modularidade: Cada componente é independente. O layout e a lógica podem ser alterados sem interferir em outras partes.
+* Escalabilidade: Suporte para projetos maiores, onde funcionalidades podem ser adicionadas sem bagunçar o código.
+
 
 
 <div id='api' />
@@ -202,11 +209,14 @@ No Next.js, usamos CSS Modules, que oferecem um escopo local para os estilos, ev
 
 ### Código original:
 
-O código original é um arquivo HTML simples, sem componentes reutilizáveis ou modularização.
+O código original não utilizava componentes reutilizáveis. Todo o HTML era definido de forma estática, sem separação de responsabilidades.
+### Problemas encontrados:
+1. Repetição de código: Cada novo elemento ou herói precisava ser manualmente inserido no DOM, o que levava a redundâncias e dificultava a manutenção.
+2. Falta de controle: Não havia verificação de duplicatas ou tratamento de erros para dados incompletos.
 
-### Código next.js: 
+### Código atualizado next.js: 
 
-No código Next.js, o HTML foi transformado em um componente React reutilizável. Cada herói é renderizado dentro de um cartão usando o map:
+O novo código utiliza a renderização dinâmica e controle eficiente para evitar duplicações na lista de heróis. Aqui está o trecho principal que controla a adição de novos heróis ao estado:
 
 ```next.js
 {heroes.map((hero, index) => (
@@ -231,7 +241,7 @@ No código Next.js, o HTML foi transformado em um componente React reutilizável
 ))}
 ```
 
-* O que está fazendo: O código agora utiliza componentes React e mapeia o array de heróis para renderizar dinamicamente os cartões de heróis. Esse trecho de código itera sobre a lista de heróis (heroes) e renderiza um card para cada um, exibindo a imagem, o nome e as estatísticas de inteligência e força. Cada card é composto por uma imagem (<img>), onde a fonte é definida pela URL armazenada em hero.image, e o nome é exibido em um título (<h1>). As estatísticas de inteligência e força são apresentadas como barras de progresso, cujo tamanho é dinamicamente ajustado com base nos valores de hero.intelligence e hero.strength. A estilização é feita utilizando classes do arquivo de CSS Modules, e a largura das barras de progresso é definida inline, conforme os dados dos heróis.
+* O que está fazendo: O código agora utiliza componentes React e mapeia o array de heróis para renderizar dinamicamente os cartões de heróis. Esse trecho de código itera sobre a lista de heróis (heroes) e renderiza um card para cada um, exibindo a imagem, o nome e as estatísticas de inteligência e força. Cada card é composto por uma imagem img, onde a fonte é definida pela URL armazenada em hero.image, e o nome é exibido em um título h1. As estatísticas de inteligência e força são apresentadas como barras de progresso, cujo tamanho é dinamicamente ajustado com base nos valores de hero.intelligence e hero.strength. A estilização é feita utilizando classes do arquivo de CSS Modules, e a largura das barras de progresso é definida inline, conforme os dados dos heróis.
 * Por que mudou: A componentização permite reutilização e maior modularidade, o que facilita a manutenção e expansão da aplicação.
 
 <div id='imagens' />
